@@ -1,0 +1,151 @@
+@import url("/assets/css/global.css");
+@import url("/assets/css/reset.css");
+@import url("/assets/script/card-hover-animation.js");
+body {
+    background-color: var(--primary-color);
+}
+
+body::before {
+    content: "";
+    background-image: url(/assets/images/Spider-homepage.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: background-image 1s ease-in-out;
+    opacity: 0.2
+    
+}
+
+.spider-menu {
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+}
+
+.spider-menu__item {
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+    margin: 0 1.25rem;
+}
+
+.spider-menu__icon {
+    width: 2.5rem;
+    margin: 0 1.25rem;
+    vertical-align: middle;
+}
+
+.spider-contanier {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.spider-card {
+    border: 0.5rem solid white;
+    width: calc(100% / 3 - 8%);
+    height: 70vh;
+    position: relative;
+    transition: filter .5s ease-in-out;
+}
+
+.spider-card__background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.spider-card__images {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    transition: 1s ease-in-out;
+}
+
+.spider-card__title {
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    transition: bottom 1s ease-in-out;
+}
+
+.spider-controller {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.spider-controller__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1;
+    transition: tranform 0.3s ease-in-out;
+}
+
+.spider-controller__bottom:hover {
+    transform: scale(2);
+}
+
+.spider-controller__bottom:nth-child(2) {
+    margin: 0 2.75rem;
+}
+
+.spider-controller__line {
+    background-color: white;
+    width: 50%;
+    height: 2px;
+    position: absolute;
+}
+.spider-card--hovered .spider-card__background {
+    cursor: pointer;
+    opacity: 0;
+}
+.spider-card--hovered .spider-card__images {
+    transform: scale(1.4);
+    filter: drop-shadow(30px 10px 4px rgba(0,0,0,0,.5));
+}
+
+body#spidertobey-hovered-hovered::before {
+    background-image: url(/assets/images/1tobey.jpg);
+}
+body#spidersndrew-hovered-hovered::before {
+    background-image: url(/assets/images/2andrew.jpg);
+}
+body#spidertom-hovered-hovered::before {
+background-image: url(/assets/images/3tom.jpg);
+}
+
+body[id^="spider"]::before{
+    opacity: 1;
+}
+body[id^="spider"] .spider-card:not(.spider-card--hovered){
+    filter: grayscale(75%);
+}
+
+.spider-card--hovered .spider-card__title{
+    bottom: 50%;
+}

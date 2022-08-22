@@ -1,0 +1,32 @@
+@import url("/assets/pages/Tobey/tobey.html");
+
+.spider-wrapper{
+    display: flex;
+    height: 100vh;
+    flex-flow: row nowrap;
+}
+.spider-wrapper .spider-left-column{
+    width: 100px;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.spider-wrapper .spider-main-content{
+    height: 100%;
+    width: 100%;
+    background-color: gray;
+    padding-left: 30px;
+}
+.navigator{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+.navigator ul li {
+    margin: 60px 0;
+}
